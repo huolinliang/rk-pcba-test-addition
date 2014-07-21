@@ -48,7 +48,6 @@
 #include "language.h"
 
 #define SCRIPT_NAME                     "/res/test_config.cfg"
-#define SCRIPT_NAME2                    "/res/tptest.cfg"
 #define ITEM_H				2			//height of test item
 #define ITEM_X				0			//x positon of test item
 
@@ -621,8 +620,6 @@ get_menu_selection(char** headers, char** items, int menu_only,
 
 int main(int argc, char **argv)
 {
-	int boot_time = 1;
-imtinit:;
 	int ret,w;
 	char *script_buf;
 	struct list_head *pos;
@@ -648,9 +645,6 @@ imtinit:;
 	cur_p_y = (gr_fb_height()/CHAR_HEIGHT) - 1;
 	INIT_LIST_HEAD(&manual_test_list_head);
 	INIT_LIST_HEAD(&auto_test_list_head);
-    if(boot_time%2 == 1)
-	script_buf = parse_script(SCRIPT_NAME2);
-    else
 	script_buf = parse_script(SCRIPT_NAME);
 
 	if (!script_buf)
@@ -712,8 +706,6 @@ imtinit:;
 		printf("pcba-test-over\n");
 		sleep(3);
 	}*/
-    boot_time++;
-    goto imtinit;
 	printf("pcba test over!\n");
 	return success;
 }
