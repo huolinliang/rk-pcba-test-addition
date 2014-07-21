@@ -67,6 +67,7 @@ LOCAL_SRC_FILES := \
     hdmi_test.c       \
     sim_test.c \
     battery_test.c\
+    backlight_test.c\
 	light_sensor_test.c\
 	moto_test.c\
 	ddr_test.c \

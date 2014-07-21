@@ -42,6 +42,7 @@
 #include "battery_test.h"
 #include "ddr_test.h"
 #include "cpu_test.h"
+#include "backlight_test.h"
 #include "light_sensor_test.h"
 #include "moto_test.h"
 
@@ -110,6 +111,7 @@ int camera_err = -1;
 
 pthread_t camera1_tid;  
 
+pthread_t backlight_tid;
 pthread_t light_sensor_tid;  
 pthread_t moto_tid;
 
@@ -310,6 +312,15 @@ int start_test_pthread(struct testcase_info *tc_info)
 		   return -1;
 		   
 		}  
+	}else if(!strcmp(tc_info->base_info->name, "backlight"))
+	{
+		err = pthread_create(&backlight_tid, NULL, backlight_test,tc_info); //
+		if(err != 0)
+		{
+		   printf("create backlight_test test thread error: %s/n",strerror(err));
+		   return -1;
+
+		}
 	}else if(!strcmp(tc_info->base_info->name, "light_sensor"))
 	{
 		err = pthread_create(&light_sensor_tid, NULL, light_sensor_test,tc_info); //

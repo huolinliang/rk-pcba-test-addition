@@ -11,6 +11,7 @@
 #define PCBA_KEY "Key"
 #define PCBA_RTC "Rtc"
 #define PCBA_SIM "Sim"
+#define PCBA_BACKLIGHT "Backlight"
 #define PCBA_LIGHT_SENSOR "Light Sensor"
 #define PCBA_MOTO "MOTO"
 #define PCBA_SDCARD  "SDCard"

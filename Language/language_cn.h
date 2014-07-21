@@ -16,6 +16,7 @@
 #define PCBA_WIFI   "网络"
 #define PCBA_WIFI_SIGNAL "信号"
 #define PCBA_WIFI_SIGNAL1 "格"
+#define PCBA_BACKLIGHT "背光"
 #define PCBA_LIGHT_SENSOR "光感"
 #define PCBA_MOTO "马达"
 #define PCBA_BATTERY   "电池"
