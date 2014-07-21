@@ -68,6 +68,7 @@ LOCAL_SRC_FILES := \
     sim_test.c \
     battery_test.c\
 	light_sensor_test.c\
+	moto_test.c\
 	ddr_test.c \
 	cpu_test.c
 

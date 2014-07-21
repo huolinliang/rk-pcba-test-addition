@@ -43,6 +43,7 @@
 #include "ddr_test.h"
 #include "cpu_test.h"
 #include "light_sensor_test.h"
+#include "moto_test.h"
 
 #include <signal.h>
 #include "language.h"
@@ -110,6 +111,7 @@ int camera_err = -1;
 pthread_t camera1_tid;  
 
 pthread_t light_sensor_tid;  
+pthread_t moto_tid;
 
 pthread_t wlan_tid;  
 char *wlan_res;
@@ -314,6 +316,15 @@ int start_test_pthread(struct testcase_info *tc_info)
 		if(err != 0)
 		{
 		   printf("create light_sensor_test test thread error: %s/n",strerror(err));
+		   return -1;
+
+		}
+	}else if(!strcmp(tc_info->base_info->name, "moto"))
+	{
+		err = pthread_create(&moto_tid, NULL, moto_test,tc_info); //
+		if(err != 0)
+		{
+		   printf("create moto_test test thread error: %s/n",strerror(err));
 		   return -1;
 
 		}
